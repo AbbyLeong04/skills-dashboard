@@ -4,14 +4,16 @@ type SkillCardProps = {
   role: string;
   skills: string[];
   level: number; // 1 到 5
+  department: string;
 };
 
 // 组件就是一个返回界面的函数
-export default function SkillCard({ name, role, skills, level }: SkillCardProps) {
+export default function SkillCard({ name, role, skills, level, department }: SkillCardProps) {
   return (
     <div className="rounded-xl border border-gray-200 p-5 shadow-sm">
       <h2 className="text-lg font-semibold">{name}</h2>
       <p className="text-sm text-gray-500">{role}</p>
+      <p className="text-sm text-gray-500">{department}</p>
 
       <div className="mt-3 flex flex-wrap gap-2">
         {skills.map((skill) => (
